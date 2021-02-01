@@ -27,5 +27,5 @@ timeout 6 ./ModelListTest -v > ListTest-out.txt
 
 cat ListTest-out.txt
 
-rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage ListTest-out.txt
+rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage ListTest-out.txt pa3-lunit-check.sh
 

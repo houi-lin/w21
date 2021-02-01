@@ -38,5 +38,5 @@ if [ -e FindComponents ] || [ -e *.o ]; then
   echo "WARNING: Makefile didn't successfully clean all files"
 fi
 
-rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage
+rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage pa3-make-check.sh
 

@@ -29,5 +29,5 @@ timeout 6 valgrind --leak-check=full -v ./ModelGraphTest -v > GraphTest-out.txt 
 cat GraphTest-out.txt
 cat GraphTest-mem.txt | grep --after-context=8 -E 'SUMMARY|freed'
 
-rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage GraphTest-mem.txt GraphTest-out.txt
+rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage GraphTest-mem.txt GraphTest-out.txt pa3-gunit-check.sh
 

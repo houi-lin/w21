@@ -60,5 +60,4 @@ echo "Passed $pathtestspassed FindComponents tests for a total of $pathtestspoin
 echo ""
 echo ""
 
-rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage
-
+rm -f *.o ModelListTest* ModelGraphTest* FindComponents garbage diff* infile* model-outfile* outfile* pa3-func-check.sh
