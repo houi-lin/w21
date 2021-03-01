@@ -60,5 +60,5 @@ done
 
 echo ""
 echo ""
-rm -f *.o Order infile* *outfile* diff*
+rm -f *.o Order infile* *outfile* diff* valgrind*
 
