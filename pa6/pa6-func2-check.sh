@@ -31,8 +31,9 @@ echo "Press enter to continue"
 read verbose
 for NUM in $(seq 1 $NUMTESTS); do
   rm -f WF-outfile$NUM.txt
-  timeout 12 WordFrequency WF-infile$NUM.txt WF-outfile$NUM.txt
-  diff -bBwu --speed-large-files WF-outfile$NUM.txt Model-WF-outfile$NUM.txt &> WF-diff$NUM.txt >> WF-diff$NUM.txt
+  timeout 16 WordFrequency WF-infile$NUM.txt WF-outfile$NUM.txt
+  grep . WF-outfile$NUM.txt > WF-outfile$NUM_trim.txt
+  diff -bBwu --speed-large-files WF-outfile$NUM_trim.txt Model-WF-outfile$NUM.txt &> WF-diff$NUM.txt >> WF-diff$NUM.txt
   if [ -e WF-diff$NUM.txt ] && [[ ! -s WF-diff$NUM.txt ]]; then
     let lextestspassed+=1
   fi
