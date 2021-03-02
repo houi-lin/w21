@@ -31,8 +31,9 @@ echo "Press enter to continue"
 read verbose
 for NUM in $(seq 1 $NUMTESTS); do
   rm -f outfile$NUM.txt
-  timeout 20s valgrind --leak-check=full -v Order infile$NUM.txt outfile$NUM.txt &> valgrind-out$NUM.txt
-  diff -bBwu --speed-large-files outfile$NUM.txt Model-outfile$NUM.txt &> diff$NUM.txt >> diff$NUM.txt
+  timeout 30s valgrind --leak-check=full -v Order infile$NUM.txt outfile$NUM.txt &> valgrind-out$NUM.txt
+  grep . outfile$NUM.txt > outfile$NUM_trim.txt
+  diff -bBwu --speed-large-files outfile$NUM_trim.txt Model-outfile$NUM.txt &> diff$NUM.txt >> diff$NUM.txt
   if [ -e diff$NUM.txt ] && [[ ! -s diff$NUM.txt ]]; then
     let lextestspassed+=1
     echo "PASS"
