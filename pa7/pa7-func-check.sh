@@ -52,7 +52,7 @@ for NUM in $(seq 1 $NUMTESTS); do
       partial_credit=$(echo "scale = 0; $(expr $PNTSPERTEST\*$line_count/10)" | bc -l)
       echo "get partial credir $partial_credit points"
       let testspoints+=$partial_credit
-	fi
+    fi
   fi
   echo "=========="
 done
