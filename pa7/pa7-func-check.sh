@@ -46,12 +46,11 @@ for NUM in $(seq 1 $NUMTESTS); do
     echo "PASS"
   else
     echo "FAIL..."
-	if [ -e diff$NUM.txt ]; then 
-	  line_count=$(expr 10)
-	  let line_count-=$(grep "^+[-0-9]" diff$NUM.txt | wc -l)
-
+    if [ -e diff$NUM.txt ]; then 
+      line_count=$(expr 10)
+      let line_count-=$(grep "^+[-0-9]" diff$NUM.txt | wc -l)
       partial_credit=$(echo "scale = 0; $(expr $PNTSPERTEST\*$line_count/10)" | bc -l)
-	  echo "get partial credir $partial_credit points"
+      echo "get partial credir $partial_credit points"
       let testspoints+=$partial_credit
 	fi
   fi
